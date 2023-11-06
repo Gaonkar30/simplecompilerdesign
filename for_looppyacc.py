@@ -1,10 +1,11 @@
 import ply.yacc as yacc
 from for_loopplex import tokens
+
 def p_for_loop(p):
     '''
     for_loop : FOR IDENTIFIER IN RANGE LPAREN expression RPAREN COLON statements
     '''
-    p[0] = f"For loop: for {p[2]} in range({p[6]}): {p[8]}"
+    p[0] = f"FOR loop: for {p[2]} in range({p[6]}): {p[8]}"
 
 def p_expression(p):
     '''
@@ -26,6 +27,8 @@ def p_statement(p):
     '''
     statement : IDENTIFIER
               | NUMBER
+              | LPAREN
+              | RPAREN
     '''
     p[0] = str(p[1])
 
@@ -34,13 +37,15 @@ def p_error(p):
 
 parser = yacc.yacc()
 
+
 while True:
     try:
-        s = input('for i in range(200): print(i)')
+        s = input('Enter a for loop : ')
     except EOFError:
         break
 
     if not s:
         continue
+
     result = parser.parse(s)
     print(result)
