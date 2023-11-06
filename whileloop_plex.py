@@ -9,9 +9,12 @@ tokens = (
 
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
-t_WHILE = r'while'
+
 t_COLON = r':'
 
+def t_WHILE(t):
+    r'While'
+    return t
 def t_NUMBER(t):
     r'\d+'
     t.value = int(t.value)
