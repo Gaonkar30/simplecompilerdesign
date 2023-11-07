@@ -8,6 +8,7 @@ tokens = (
     'RPAREN',
     'COLON',
     'COMMA',
+    'SEMICOLON'
 )
 
 # Define regular expressions for tokens
@@ -15,6 +16,7 @@ t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_COLON = r':'
 t_COMMA= r','
+t_SEMICOLON =r';'
 def t_IDENTIFIER(t):
     r'(?!def\b)[a-zA-Z_][a-zA-Z0-9_]*'
     return t
