@@ -13,7 +13,7 @@ t_RPAREN = r'\)'
 t_COLON = r':'
 
 def t_WHILE(t):
-    r'While'
+    r'while'
     return t
 def t_NUMBER(t):
     r'\d+'
@@ -21,7 +21,7 @@ def t_NUMBER(t):
     return t
 
 def t_IDENTIFIER(t):
-    r'[a-zA-Z_][a-zA-Z0-9_]*'
+    r'(?!while\b)[a-zA-Z_][a-zA-Z0-9_]*'
     return t
 
 def t_newline(t):
