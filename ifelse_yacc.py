@@ -3,7 +3,7 @@ from ifelse_lex import tokens
 
 
 
-# Start symbol for the grammar
+=
 def p_statement(p):
     """
     statement : if_statement
@@ -15,20 +15,19 @@ def p_if_statement(p):
     """
     if_statement : IF LPAREN expression RPAREN COLON expression LPAREN expression RPAREN
     """
-    # Implement your handling of if statements here
+    
 
 def p_if_else_statement(p):
     """
-    if_else_statement : IF expression COLON statement LPAREN statement RPAREN ELSE COLON statement LPAREN statement RPAREN
+    if_else_statement : IF LPAREN expression RPAREN COLON expression LPAREN expression RPAREN ELSE COLON expression LPAREN expression RPAREN
     """
-    # Implement your handling of if-else statements here
 
 def p_expression(p):
     """
     expression : IDENTIFIER
                  | NUMBER
     """
-    # Implement your handling of expressions here
+   
 
 def p_empty(p):
     """
